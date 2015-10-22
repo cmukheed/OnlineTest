@@ -1,0 +1,152 @@
+/*body {
+    background: #2b3e50;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+*/
+.content-body{
+  background-color: #2b3e50;
+}
+table{background:#CCC;border:1px solid #000;}
+table td{padding:15px;border:1px solid #DDD;}
+
+.tab-panels ul {
+    margin: 0;
+    padding: 0;
+}
+.tab-panels ul li {
+    list-style-type: none;
+    display: inline-block;
+    background: #5cb85c;
+    margin: 0;
+    padding: 3px 80px;
+    border-radius: 7px 7px 0 0;
+    color: #fff;
+    font-weight: 200;
+    cursor: pointer;
+
+}
+.tab-panels ul li:hover {
+    color: #fff;
+    background: #4c924c;
+}
+
+.tab-panels ul li.active {
+    color: #fff;
+    background: #4c924c;
+}
+
+.tab-panels .panel {
+    display:none;
+    background: #E0E0E0;
+    padding: 10px;
+    border-radius: 0px 10px 10px 10px;
+    height: 450px;
+    width: 115%;
+}
+
+.tab-panels .panel.active {
+    display:block;
+}
+
+.content{
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+
+  .labels {
+  /*display: inline;*/
+  padding: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+  background: #5cb85c;
+  margin-right: 10px;
+}
+
+body{
+  background-color: #2b3e50;
+}
+
+#TITLE{
+  color: #FFF;
+}
+.header{
+  float:left;
+}
+.log-out{
+  float:right;
+  color: #fff;
+  margin-top: 25px;
+}
+.glyphicon-user{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+.input-text{
+  display: inline;
+  width: 20%;
+  height: 39px;
+  padding: 8px 16px;
+  font-size: 15px;
+  line-height: 1.42857143;
+  color: #2b3e50;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.pass{
+  font-size: 20px;
+}
+
+.sign-in-btn{
+  background-color: #5cb85c;
+  color: #FFF;
+}
+
+.login-background{
+  background-color: #2b3e50;
+}
+#INVALID_USER{
+color :#FF0000;
+font-weight: bold;
+}
+.login-div{
+width : 500px;
+height: 350px;
+}
+#USERNAME{
+margin-top:40px;
+}
+
+.customalert{
+  	background: #de9a44;
+  width: 27%;
+  display: none;
+  top: -2px;
+  position: absolute;
+  left: 37%;
+  z-index: 9999;
+  opacity: 0.9;
+  padding: 13px;
+  text-align: center;
+  border: 1px solid white;
+  color: white;
+  text-shadow: none;
+  border-radius: 7px;
+  }
