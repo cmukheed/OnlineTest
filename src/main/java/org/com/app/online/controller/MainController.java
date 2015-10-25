@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.com.app.online.model.CredentialModel;
+import org.com.app.online.util.PropertyReader;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,7 +26,7 @@ public final class MainController {
 		return "login";
 	}
 
-	@RequestMapping(value = { "/", "/login" }, method = RequestMethod.POST)
+	@RequestMapping(value = {"/login" }, method = RequestMethod.POST)
 	public String login(@ModelAttribute CredentialModel credentialModel, Model model) throws InterruptedException, IOException {
 		// TODO should apply some user authentication
 		String user = "stellar";
@@ -41,20 +42,28 @@ public final class MainController {
 		return "forward:/home";
 	}
 
-	@RequestMapping("/home")
-	public synchronized String listDashboards(HttpServletRequest servletRequest, WebRequest request,
-			@Valid CredentialModel credentialModel, Model model) {
-		String user = "stellar";
-		String password = "Stellar#2113";
-
-		CredentialModel newCredentialModel = new CredentialModel();
-		if (!user.equals(credentialModel.getUid()) || !password.equals(credentialModel.getPassword())) {
-			model.addAttribute("credentialModel", newCredentialModel);
-			model.addAttribute("isError", true);
-			return "login";
-		}
-
+	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
+	public synchronized String homePage(HttpServletRequest servletRequest, Model model) {
+		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
 		return "home";
+	}
+	
+	@RequestMapping(value = { "/aboutus" }, method = RequestMethod.GET)
+	public synchronized String aboutUsPage(HttpServletRequest servletRequest, Model model) {
+		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
+		return "aboutus";
+	}
+	
+	@RequestMapping(value = { "/navigationbar" }, method = RequestMethod.GET)
+	public synchronized String navigationPage(HttpServletRequest servletRequest, Model model) {
+		//model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
+		return "navigationbar";
+	}
+	
+	@RequestMapping(value = { "/registration" }, method = RequestMethod.GET)
+	public synchronized String registrationPage(HttpServletRequest servletRequest, Model model) {
+		//model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
+		return "registration";
 	}
 
 }

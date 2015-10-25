@@ -1,18 +1,15 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Classmate</title>
-
 <link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="css/classmate.css" />
 </head>
 <body>
 	<div id="wrap">
-
 		<div id="main-entire" class="container">
 
 			<div id="top" class="row">
@@ -22,64 +19,8 @@
 					<h2 id="SUB_TITLE">Powered by IIT</h2>
 				</div>
 			</div>
-
 			<body id="main">
-				<div class="row">
-					<div id="naviWrap" class="col-sm-12">
-						<nav class="navbar navbar-default navbar-inverse"
-							role="navigation">
-							<div class="navbar-header">
-
-								<button type="button" class="navbar-toggle"
-									data-toggle="collapse" data-target=".navbar-ex1-collapse">
-									<span class="sr-only">Toggle navigation</span> <span
-										class="icon-bar"></span> <span class="icon-bar"></span> <span
-										class="icon-bar"></span>
-								</button>
-
-								<div class="collapse navbar-collapse navbar-ex1-collapse">
-									<ul class="nav navbar-nav">
-										<li class="hidden"></li>
-										<li class="space"><a href="home.html">Home</a></li>
-										<li class="dropdown space"><a href="aboutUs.html">About
-												Us</a> <!-- <ul class = "dropdown-menu">
-                              <li><a href = "#achievements.html">Achievements</a></li>
-                              <li><a href = "#team.html">Team</a></li>
-                            </ul> --></li>
-										<li class="dropdown space"><a href="#"
-											class="dropdown=toggle" data-toggle="dropdown">Classes<b
-												class="caret"></b></a>
-											<ul class="dropdown-menu">
-												<li><a href="#liveclasses.html">Live Classes</a></li>
-												<li><a href="#newbatches.html">New Batches</a></li>
-												<li><a href="#schedule.html">Schedule</a></li>
-											</ul></li>
-										<li class="dropdown space"><a href="#"
-											class="dropdown=toggle" data-toggle="dropdown">Tests<b
-												class="caret"></b></a>
-											<ul class="dropdown-menu">
-												<li><a href="test.html">Online Tests</a></li>
-												<li><a href="#testseries.html">Test Series</a></li>
-
-											</ul></li>
-										<li class="dropdown space"><a href="#"
-											class="dropdown=toggle" data-toggle="dropdown">Material<b
-												class="caret"></b></a>
-											<ul class="dropdown-menu">
-												<li><a href="#previouspapers.html">Previous Papers</a></li>
-
-											</ul></li>
-										<li class="space"><a href="#contactus.html">Contact
-												Us</a></li>
-									</ul>
-								</div>
-							</div>
-						</nav>
-					</div>
-				</div>
-
-
-
+				<div id="topNav" class="row"></div>
 				<div class="row">
 					<div class="col-sm-9">
 						<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -90,24 +31,19 @@
 							</ol>
 							<div class="carousel-inner">
 								<div class="item active">
-									<img class="img-rounded" src="app/images/images.JPG"
-										alt="Hub City Winner" title="Hub City Winner">
+									<img class="img-rounded" src="app/images/images.JPG" alt="Hub City Winner" title="Hub City Winner" />
 								</div>
 								<div class="item">
-									<img class="img-rounded" src="app/images/images.JPG"
-										alt="Hub City Winner" title="Hub City Winner">
+									<img class="img-rounded" src="app/images/images.JPG" alt="Hub City Winner" title="Hub City Winner" />
 								</div>
 								<div class="item">
-									<img class="img-rounded" src="app/images/images.JPG"
-										alt="Hub City Winner" title="Hub City Winner">
+									<img class="img-rounded" src="app/images/images.JPG" alt="Hub City Winner" title="Hub City Winner" />
 								</div>
 							</div>
 
-							<a class="left carousel-control" href="#myCarousel" role="button"
-								data-slide="prev"> <span
+							<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"> <span
 								class="glyphicon glyphicon-chevron-left"></span>
-							</a> <a class="right carousel-control" href="#myCarousel"
-								role="button" data-slide="next"> <span
+							</a> <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"> <span
 								class="glyphicon glyphicon-chevron-right"></span>
 							</a>
 						</div>
@@ -117,23 +53,16 @@
 							<div class="col-sm-12">
 								<div class="column">
 									<h4 id="WLCOME">WELCOME TO CLASSMATE ACADEMY</h4>
-									<p id="WELCOME_NOTE">Classmate Academy is an initiative of
-										IITians to prepare the students in all spheres of life. We at
-										classmate academy emphasize on overall improvement of the
-										student.Now a days competitive exams play a major role in
-										getting into the most prestigious jobs. Taking that into
-										consideration we are providing coaching for SSC-CGL, UPSC
-										exams etc. The growing importance of these entrance exams
-										suggests the need for students to undergo extra training to
-										face such exams confidently.Our main aim is to impart quality
-										professional education and meeting the rising expectations of
-										young aspirants in SOUTH INDIA. CLASSMATE ACADEMY has been
-										striving to achieve the objective of pursuit of excellence by
+									<p id="WELCOME_NOTE">Classmate Academy is an initiative of IITians to prepare the students in all spheres of life. We
+										at classmate academy emphasize on overall improvement of the student.Now a days competitive exams play a major role in
+										getting into the most prestigious jobs. Taking that into consideration we are providing coaching for SSC-CGL, UPSC exams
+										etc. The growing importance of these entrance exams suggests the need for students to undergo extra training to face
+										such exams confidently.Our main aim is to impart quality professional education and meeting the rising expectations of
+										young aspirants in SOUTH INDIA. CLASSMATE ACADEMY has been striving to achieve the objective of pursuit of excellence by
 										students..</p>
 									<h4>INTERACTIVE CLASSES</h4>
-									<p id="INTC_CLASSES">All classes are conducted in a
-										state-of-the-art environment that connects you to instructor
-										and the content in a most effective manner.</p>
+									<p id="INTC_CLASSES">All classes are conducted in a state-of-the-art environment that connects you to instructor and
+										the content in a most effective manner.</p>
 								</div>
 							</div>
 						</div>
@@ -142,8 +71,7 @@
 							<div class="col-sm-12">
 								<div class="column">
 									<h4>Misson Statement</h4>
-									<p>To be a leading provider of excellent classroom and
-										online coaching for SSC CGL.</p>
+									<p>To be a leading provider of excellent classroom and online coaching for SSC CGL.</p>
 								</div>
 							</div>
 						</div>
@@ -152,8 +80,7 @@
 							<div class="col-sm-6">
 								<div class="column">
 									<div id="LATEST_NEWS">
-										<p>​TIer II @ 02.10.2015 Test Series @ 09.10.2015 2014 CGL
-											Results 300+ Selections in Tier I 2015</p>
+										<p>​TIer II @ 02.10.2015 Test Series @ 09.10.2015 2014 CGL Results 300+ Selections in Tier I 2015</p>
 									</div>
 								</div>
 							</div>
@@ -170,37 +97,27 @@
 											<li>Online Test Series</li>
 											<li>Online Live Classes</li>
 											<li>And Many More......</li>
-											<ul>
+										</ul>
 									</div>
-
 								</div>
 							</div>
-
 						</div>
-
 					</div>
-
 					<div class="col-sm-3">
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="column">
 									<h4>Student Notice Board</h4>
-									<p>Powered by IITians SSC CGL PURE MATHS NEW BATCH @
-										02.10.2015. Daily 2:15-5:15pm Tier II, CHSL and Tier I Test
+									<p>Powered by IITians SSC CGL PURE MATHS NEW BATCH @ 02.10.2015. Daily 2:15-5:15pm Tier II, CHSL and Tier I Test
 										Series Admissions are in Progress.</p>
-
 								</div>
-
 							</div>
 							<div class="col-sm-12">
 								<div class="column">
 									<h4>Results</h4>
 									<p>Reults can be scrolled here</p>
-
 								</div>
-
 							</div>
-
 							<div class="col-sm-12">
 								<div class="column">
 									<h4>Tweets</h4>
@@ -214,26 +131,8 @@
 					</div>
 
 				</div>
-			<body>
-
-				<div id="footer" class="row">
-					<div class="col-sm-2">Follow us on</div>
-					<div class="col-sm-8">
-						<div class="collapse navbar-collapse navbar-ex1-collapse">
-							<ul class="nav navbar-nav">
-								<li class="hidden"></li>
-								<li><a href="#home.html">Home</a></li>
-								<li><a href="#aboutUs.html">About Us</a></li>
-								<li><a href="#">Classes</a></li>
-								<li><a href="#">Tests</a></li>
-								<li><a href="#">Material</a></li>
-								<li><a href="#">Contact us</a></li>
-
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-2">Copyright &copy; 2012 Classmate Academy</div>
-				</div>
+			</body>
+			<div id="footer" class="row"></div>
 		</div>
 	</div>
 </body>
@@ -242,12 +141,16 @@
 
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-<script src="app/js/classmate.js"></script>
-<script>
+<script src="app/js/home.js"></script>
+<script src="app/js/loadfooter.js"></script>
 
- 
+<script th:inline="javascript">
+    var footer = [[${footer}]];
   $(document).ready(function() {
-    Classmate.init();
+	  jQuery.get("navigationbar.html", function(data){
+		    jQuery("#topNav").append(data);
+		});
+    	home.init(footer);
   }); 
-  </script>
+</script>
 </html>

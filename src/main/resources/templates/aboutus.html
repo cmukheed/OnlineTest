@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Classmate</title>
+
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/classmate.css" />
+</head>
+<body>
+	<div id="wrap">
+
+		<div id="main-entire" class="container">
+
+			<div id="top" class="row">
+				<div class="col-sm-4">logo</div>
+				<div class="col-sm-6">
+					<h1 id="SITE_NAME">CLASSMATE ACADEMY</h1>
+					<h2 id="SUB_TITLE">Powered by IIT</h2>
+				</div>
+			</div>
+
+			<body id="main">
+				<div id="topNav" class="row"></div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="column">
+							<div id="ABOUT_US">
+								Classmate Academy is providing the coaching exclusively for all entrance exams conducted by Staff Selection Commission.
+								Courses offered by Classmate Academy: Classroom Coaching:
+								<ul>
+
+									<li>SSC CGL Tier I.</li>
+									<li>SSC CGL Tier II.</li>
+									<li>SSC CGL Interview Guidance.</li>
+									<li>SSC CHSL.</li>
+									<li>SSC CPO.</li>
+
+								</ul>
+								Paper based test series - CGL &nbsp; CHSL. ​Online Services: Online Test Series - CGL Tier I, CGL Tier II, CHSL. Live
+								Online Classes.
+
+
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="column">
+							<div id="ACHIEVMENTS">
+								<h4>ACHIEVEMENTS</h4>
+
+								We are proud to say that Md.ROSHAN student of Classmate Academy secured All India Rank 44 in CSE 2014 (IAS). Classmate
+								Academy Student got ICET-2015 State 1st Rank SSC-CGL 2013
+								<ul>
+									<li>72 final selections</li>
+									<li>19 selections for the posts in Income Tax and Central Excise.</li>
+								</ul>
+
+								SSC-CGL 2014​
+								<ul>
+									<li>124 final selections</li>
+									<li>90 interview and 34 non-interview</li>
+									<li>263 selections in Tier I</li>
+									<li>204 selections in Tier II</li>
+									<li>Topper marks in the Tier II final list - 506 marks - Southern Region 2nd highest marks​​</li>
+								</ul>
+
+
+
+
+							</div>
+
+						</div>
+
+
+					</div>
+					<div class="col-sm-4">
+						<div class="column">
+							<div id="TEAM">
+								<h4>OUR TEAM</h4>
+								<p>
+								<ul>
+									<li>Venkata Krishna Reddy CAPF AIR-7, Asst. Commandant- CISF</li>
+									<li>K.V. Aravinda Reddy* (M.Tech, IIT Kharagpur) (*Honorary)</li>
+									<li>K C S Reddy (B.Tech., Mech., IIT-DH) Civils IAS Exam and IIT JEE Faculty</li>
+									<li>V Anvesh Reddy (B.Tech, Elec., IIT Madras)</li>
+									<li>Thangabalan* (M.Sc., Univ. of Stuttgart, Germany) (*Honorary) (IAS 2013 - AIR 891)</li>
+									<li>M Sai Aditya (B.Tech, Civil Engg., IIT Kharagpur)</li>
+									<li>Pradeep Kumar Raju (MBA)​</li>
+
+
+								</ul>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="footer" class="row"></div>
+			</body>
+		</div>
+	</div>
+</body>
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="app/js/aboutus.js"></script>
+<script src="app/js/loadfooter.js"></script>
+
+<script th:inline="javascript">
+	var footer = [[${footer}]];
+	jQuery(document).ready(function() {
+		jQuery.get("navigationbar.html", function(data){
+		    jQuery("#topNav").append(data);
+		});
+		aboutus.init(footer);
+	}); 
+</script>
+</html>

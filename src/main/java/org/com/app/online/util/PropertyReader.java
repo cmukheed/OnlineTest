@@ -1,28 +1,33 @@
 package org.com.app.online.util;
 
 import java.io.InputStream;
+import java.util.Hashtable;
 import java.util.Properties;
 
 public class PropertyReader {
-	private static final String PROP_FILE = "config.properties";
 	private Properties prop = null;
 
-	private void initialize() {
+	private void initialize(String fileName) {
 		try {
-			prop = new Properties();
-			InputStream inputStream = getClass().getClassLoader().getResourceAsStream("config.properties");
+			prop = new OrderedProperties();
+			InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
 			if (inputStream != null) {
 				prop.load(inputStream);
 			}
 		} catch (Exception e) {
-			System.out.println("Failed to read from " + PROP_FILE + " file.");
+			System.out.println("Failed to read from " + fileName + " file.");
 		}
 	}
 
-	public String getProperty(String name) {
-		if (prop == null)
-			initialize();
+	public String getProperty(String fileName, String name) {
+		initialize(fileName);
 		return (prop.getProperty(name));
+
+	}
+
+	public Hashtable<Object,Object> getProperties(String fileName) {
+		initialize(fileName);
+		return (prop);
 
 	}
 }

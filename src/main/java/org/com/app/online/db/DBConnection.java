@@ -9,13 +9,15 @@ import org.com.app.online.util.PropertyReader;
 public final class DBConnection {
 
 	private static Connection sqlConnection;
+	private final String CONFIG_FILE = "config.properties";
 
 	private DBConnection() {
 		try {
-			Class.forName(new PropertyReader().getProperty("driver")).newInstance();
-			sqlConnection = DriverManager.getConnection(
-					new PropertyReader().getProperty("url") + new PropertyReader().getProperty("dbName"),
-					new PropertyReader().getProperty("userName"), new PropertyReader().getProperty("password"));
+			Class.forName(new PropertyReader().getProperty(CONFIG_FILE, "driver")).newInstance();
+			sqlConnection = DriverManager.getConnection(new PropertyReader().getProperty(CONFIG_FILE, "url")
+					+ new PropertyReader().getProperty(CONFIG_FILE, "dbName"),
+					new PropertyReader().getProperty(CONFIG_FILE, "userName"),
+					new PropertyReader().getProperty(CONFIG_FILE, "password"));
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
