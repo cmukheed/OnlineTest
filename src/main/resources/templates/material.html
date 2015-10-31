@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classmate</title>
+
+<link href="lib/css/bootstrap.min.css" rel="stylesheet">
+<link href="app/css/classmate.css" rel="stylesheet">
+</head>
+<div id="wrap">
+	<div id="main-entire" class="container">
+		<div id="top" class="row">
+			<div class="col-sm-4">logo</div>
+			<div class="col-sm-6">
+				<h1 id="SITE_NAME">CLASSMATE ACADEMY</h1>
+				<h2 id="SUB_TITLE">Powered by IIT</h2>
+			</div>
+		</div>
+
+		<div class="row">
+			<div id="topNav"></div>
+
+
+
+			<div id="main">
+
+				<div class="row">
+
+					<div class="col-sm-9">
+						<div class="column">
+							<div id="MATERIAL_DIV">Material content goes here</div>
+
+
+						</div>
+
+
+
+					</div>
+
+					<div class="col-sm-3">
+						<div class="column">
+
+							<div id="GENERAL_AWARENESS">
+								<h4>General Awareness</h4>
+								<ul id="GA-LINKS">
+									<li><a href="#" target="_blank">​INDIAN HISTORY-1</a></li>
+									<li><a href="#" target="_blank">​INDIAN HISTORY-2</a></li>
+									<li><a href="#" target="_blank">​INDIAN HISTORY-3</a></li>
+									<li><a href="#" target="_blank">​WORLD HISTORY</a></li>
+									<li><a href="#" target="_blank">​POLITY</a></li>
+									<li><a href="#" target="_blank">​MACRO ECONOMICS</a></li>
+									<li><a href="#" target="_blank">​MICRO ECONOMICS</a></li>
+									<li><a href="#" target="_blank">​PHYSICAL GEOGRAPHY</a></li>
+									<li><a href="#" target="_blank">​INDIAN GEOGRAPHY</a></li>
+									<li><a href="#" target="_blank">​SCIENCE-1</a></li>
+									<li><a href="#" target="_blank">​SCIENCE-2</a></li>
+									<li><a href="#" target="_blank">​ENGLISH</a></li>
+									<li><a href="#" target="_blank">​IDIOMS AND PHRASES</a></li>
+									<li><a href="#" target="_blank">​ONE WORD
+											SUBSTITUTIONS</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+		<script src="app/js/material.js"></script>
+		<script src="app/js/loadfooter.js"></script>
+		<script th:inline="javascript">
+    var footer = [[${footer}]];
+  $(document).ready(function() {
+	  jQuery.get("navigationbar.html", function(data){
+		    jQuery("#topNav").append(data);
+		});
+    	material.init(footer);
+  }); 
+</script>
+</html>

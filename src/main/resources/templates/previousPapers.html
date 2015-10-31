@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classmate</title>
+
+<link href="lib/css/bootstrap.min.css" rel="stylesheet">
+<link href="app/css/classmate.css" rel="stylesheet">
+</head>
+<div id="wrap">
+	<div id="main-entire" class="container">
+		<div id="top" class="row">
+			<div class="col-sm-4">logo</div>
+			<div class="col-sm-6">
+				<h1 id="SITE_NAME">CLASSMATE ACADEMY</h1>
+				<h2 id="SUB_TITLE">Powered by IIT</h2>
+			</div>
+		</div>
+
+		<div class="row">
+			<div id="topNav"></div>
+				      <div id = "main">
+
+                          <div class = "row">
+
+                            <div class = "col-sm-6">
+                              <div class  = "column" >
+                                <h4> Question Papers and Keys of CGL Tier II </h4>
+                                <div id = "CGL_TIER2 " style="height:500px; padding:40px;">
+                                  
+
+                                  <ul id = "CGL2-LINKS">
+                                  <li><a href="#" target="_blank">​SSC-CGL TIER-II - 25.10.2015 Paper-I (Arithmetic)</a></li>
+                                   <li><a href="#" target="_blank">​SSC-CGL TIER-II - 25.10.2015 Paper-I </a></li>
+                                   <li><a href="#" target="_blank">​SSC-CGL TIER-II - 25.10.2015 Paper-II (English)</a></li>
+                                   <li><a href="#" target="_blank">​SSC-CGL TIER-II - 25.10.2015 Paper-III(Statistics)</a></li>
+                                  
+                                </ul>
+
+                                </div>
+
+
+                              </div>
+                              
+
+                           
+                           </div>
+
+                            <div class = "col-sm-6">
+                              <div class = "column">
+                                <h4> Question Papers and Keys of CGL Tier I </h4>
+
+                                <div id ="CGL_TIER1">
+                                  
+                                       <ul id = "CGL1-LINKS" style="height:490px; padding:40px;">
+                                  <li><a href="#" target="_blank">​SSC CGL TIER I - 16.08.2015 (Afternoon) Question Paper with Key</a></li>
+                                   <li><a href="#" target="_blank">​SSC CGL TIER I - 16.08.2015 (Morning) Question Paper with Key</a></li>
+                                   <li><a href="#" target="_blank">​SSC CGL TIER I - 09.08.2015 (Afternoon) Question Paper with Key</a></li>
+                                   <li><a href="#" target="_blank">​SSC CGL TIER I - 09.08.2015 (Morning) Question Paper with Key</a></li>
+                                  
+                                </ul>
+                              </div>
+                            </div>
+                         </div>
+                       </div>
+                     </div>
+		</div>
+
+
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+		<script src="app/js/material.js"></script>
+		<script src="app/js/loadfooter.js"></script>
+		<script th:inline="javascript">
+    var footer = [[${footer}]];
+  $(document).ready(function() {
+	  jQuery.get("navigationbar.html", function(data){
+		    jQuery("#topNav").append(data);
+		});
+    	previousPapers.init(footer);
+  }); 
+</script>
+</html>
