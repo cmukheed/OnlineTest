@@ -1,14 +1,14 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Classmate</title>
 
-<link href="lib/css/bootstrap.min.css" rel="stylesheet">
-<link href="app/css/classmate.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/classmate.css" />
 </head>
 <style>
 .map {
@@ -47,8 +47,8 @@
 										<h4>Ashoknagar Address</h4>
 										<div>
 											SRT 30, Street No 6, Jawahar Nagar, Ashok Nagar, Hyderabad,
-											Telangana, India-500020</br> ​​ Telephone: +91.8008968071
-											+91.8008968072</br> E-mail: classmateacademy@gmail.com</br>
+											Telangana, India-500020 ​​ Telephone: +91.8008968071
+											+91.8008968072 E-mail: classmateacademy@gmail.com
 										</div>
 
 										<div id="map1" class="map"></div>
@@ -67,21 +67,21 @@
 											<div class="form-group">
 												<div class="col-md-10 col-md-offset-1">
 													<input id="fname" name="name" type="text"
-														placeholder="First Name" class="form-control">
+														placeholder="First Name" class="form-control" />
 												</div>
 											</div>
 
 											<div class="form-group">
 												<div class="col-md-10 col-md-offset-1">
 													<input id="email" name="email" type="email"
-														placeholder="Email Address" class="form-control">
+														placeholder="Email Address" class="form-control" />
 												</div>
 											</div>
 
 											<div class="form-group">
 												<div class="col-md-10 col-md-offset-1">
 													<input id="phone" name="phone" type="text"
-														placeholder="Phone" class="form-control">
+														placeholder="Phone" class="form-control" />
 												</div>
 											</div>
 
@@ -112,8 +112,8 @@
 										<h4>Dilsukhnagar Address</h4>
 										<div>
 											VS Complex, Opposite Venkatadri Theater, Dilsukhnagar,
-											Hyderabad, Telangana, India-500060 </br> ​​ Telephone:
-											+91.7569525759 +91.7093146938</br> E-mail:
+											Hyderabad, Telangana, India-500060  ​​ Telephone:
+											+91.7569525759 +91.7093146938 E-mail:
 											classmateacademy@gmail.com
 										</div>
 
@@ -127,19 +127,23 @@
 				</div>
 			</div>
 		</div>
+		</div>
+		</div>
+		
 
 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 		<script src="app/js/material.js"></script>
 		<script src="app/js/loadfooter.js"></script>
+		<script src="app/js/contactus.js"></script>
 		<script th:inline="javascript">
     var footer = [[${footer}]];
   $(document).ready(function() {
 	  jQuery.get("navigationbar.html", function(data){
 		    jQuery("#topNav").append(data);
 		});
-    	contactUs.init(footer);
+	  contactus.init(footer);
         function init_map1() {
             var myLocation = new google.maps.LatLng(17.408964, 78.492326);
             var mapOptions = {

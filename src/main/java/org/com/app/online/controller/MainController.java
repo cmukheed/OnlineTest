@@ -3,7 +3,6 @@ package org.com.app.online.controller;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 
 import org.com.app.online.model.CredentialModel;
 import org.com.app.online.util.PropertyReader;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.context.request.WebRequest;
 
 @Controller
 @SessionAttributes({ "credentialModel" })
@@ -56,14 +54,26 @@ public final class MainController {
 	
 	@RequestMapping(value = { "/navigationbar" }, method = RequestMethod.GET)
 	public synchronized String navigationPage(HttpServletRequest servletRequest, Model model) {
-		//model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
+		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
 		return "navigationbar";
 	}
 	
 	@RequestMapping(value = { "/registration" }, method = RequestMethod.GET)
 	public synchronized String registrationPage(HttpServletRequest servletRequest, Model model) {
-		//model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
+		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
 		return "registration";
+	}
+	
+	@RequestMapping(value = { "/classes" }, method = RequestMethod.GET)
+	public synchronized String classesPage(HttpServletRequest servletRequest, Model model) {
+		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
+		return "classes";
+	}
+	
+	@RequestMapping(value = { "/contactus" }, method = RequestMethod.GET)
+	public synchronized String contactusPage(HttpServletRequest servletRequest, Model model) {
+		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
+		return "contactus";
 	}
 
 }
