@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classmate</title>
+
+<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<div id="wrapper" class="active">
+
+		<!-- Sidebar -->
+		<!-- Sidebar -->
+		<div id="sidebar-wrapper">
+			<ul id="sidebar_menu" class="sidebar-nav">
+				<li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span
+						id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+			</ul>
+			<ul class="sidebar-nav" id="sidebar">
+				<li id="DASHBOARD"><a href="#"> Dashboard<span
+						class="glyphicon glyphicon-dashboard"></span></a></li>
+				<li id="PROFILES"><a href="#"> Profile<span id="GLYPH_ICON"
+						class="glyphicon glyphicon-user"></span></a></li>
+				<li id="TESTS"><a href="#"> Tests<span id="GLYPH_ICON"
+						class="glyphicon glyphicon-pencil"></span></a></li>
+			</ul>
+		</div>
+
+		<!-- Page content -->
+		<div id="page-content-wrapper">
+			<!-- Keep all page content within the page-content inset div! -->
+			<div class="page-content inset">
+				<nav class="navbar navbar-fixed-top navbar-inverse" id="HEADER"
+					role="navigation">
+					<div class="container-fluid">
+						<a class="navbar-brand" id="NAVBAR_HEADING" href="#">CLASSMATE
+							ACADEMY</a>
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed"
+								data-toggle="collapse" data-target=".navbar-ex1-collapse">
+								<span class="sr-only">Toggle navigation</span> <span
+									class="icon-bar"></span> <span class="icon-bar"></span> <span
+									class="icon-bar"></span>
+							</button>
+
+						</div>
+						<div id="navbar"
+							class="collapse navbar-collapse navbar-ex1-collapse"
+							style="height: 1px;">
+							<ul class="nav navbar-right top-nav">
+
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									id="USER_LOGOUT" data-toggle="dropdown" aria-expanded="true">
+										Name <b class="caret"></b>
+								</a>
+									<ul class="dropdown-menu">
+										<li><a href="#" id="PROFILE_USER"><span
+												class="glyphicon glyphicon-user"></span>Profile</a></li>
+										<li><a href="aboutUs.html"><span
+												class="glyphicon glyphicon-open"></span>About Us</a></li>
+
+										<li class="divider"></li>
+										<li><a href="#"><span
+												class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
+									</ul></li>
+							</ul>
+						</div>
+
+					</div>
+				</nav>
+				<div class="row">
+					<div class="col-md-12">
+						<div id="DASHBOARD_DIV">
+							<section id="title">
+								<h1 id="TITLE">DASHBOARD</h1>
+								<div class="row">
+									<div class="col-sm-6">
+										<section class="test schedule">
+											<h3 id="TITLE">Test Schedule</h3>
+											<div id="TEST_SCHEDULE_TABLE">
+												<table class="table table-bordered" cellspacing="0"
+													width="100%">
+													<thead>
+														<tr>
+															<th>Test name</th>
+															<th>Valid From</th>
+															<th>Valid Till</th>
+															<th>Status</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Tier-I Test 2</td>
+															<td></td>
+															<td></td>
+															<td><a href="#">Take Test <span id="GLYPH_ICON"
+																	class="glyphicon glyphicon-play-circle"></span></a></td>
+
+														</tr>
+														<tr>
+															<td>Tier-I Test 1</td>
+															<td></td>
+															<td></td>
+															<td><a href="#">Take Test <span id="GLYPH_ICON"
+																	class="glyphicon glyphicon-play-circle"></span></a></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</section>
+									</div>
+									<div class="col-sm-6">
+										<div id="TOTAL_TEST_DIV">
+											<table class="table table-bordered" cellspacing="0"
+												width="100%">
+												<thead>
+													<tr>
+														<th>Total Tests</th>
+														<th>2</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Completed tests</td>
+														<td>0</td>
+													</tr>
+													<tr>
+														<td>remaining tests</td>
+														<td>2</td>
+													</tr>
+													<tr>
+														<td>Incomplete tests</td>
+														<td>0</td>
+													</tr>
+													<tr>
+														<td>Missed tests</td>
+														<td>0</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-12">
+										<section class="test series">
+											<h3 id="TITLE">Test Series</h3>
+											<div id="TEST_SERIES_TABLE">
+												<table class="table table-bordered" cellspacing="0"
+													width="100%">
+													<thead>
+														<tr>
+															<th>S.no</th>
+															<th>Test Series Name</th>
+															<th>No. of Tests</th>
+															<th>Valid From</th>
+															<th>Valid Till</th>
+															<th>Buy</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>1</td>
+															<td>SSC CGL 2015 Tier II</td>
+															<td>20</td>
+															<td>7-10-2015</td>
+															<td>31-12-2015</td>
+															<td><a href="#" id="BUY_TEST">Buy Test Series <span
+																	id="GLYPH_ICON"
+																	class="glyphicon glyphicon-shopping-cart"></span></a></td>
+														</tr>
+														<tr>
+															<td>2</td>
+															<td>SSC CGL 2015 Tier I</td>
+															<td>6</td>
+															<td>1-8-2015</td>
+															<td>31-12-2015</td>
+															<td><a href="#" id="BUY_TEST">Buy Test Series <span
+																	id="GLYPH_ICON"
+																	class="glyphicon glyphicon-shopping-cart"></span></a></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+
+										</section>
+
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-sm-12">
+
+										<section class="test status">
+											<h3 id="TITLE">Test Status</h3>
+											<div id="TEST_STATUS_TABLE">
+												<table class="table table-bordered" cellspacing="0"
+													width="100%">
+													<thead>
+														<tr>
+															<th>S.no</th>
+															<th>Test Date</th>
+															<th>Test Name</th>
+															<th>Marks</th>
+															<th>Percentage</th>
+															<th>Rank</th>
+															<th>Status</th>
+														</tr>
+													</thead>
+													<tbody>
+
+
+													</tbody>
+												</table>
+											</div>
+										</section>
+
+
+									</div>
+								</div>
+
+							</section>
+						</div>
+
+						<div id="TEST_DIV" style="display: none;">
+							<section id="title">
+								<h1 id="TITLE">TESTS</h1>
+								<div class="row">
+									<div class="col-sm-12">
+										<section class="test schedule">
+											<h3 id="TITLE">Tests</h3>
+											<div id="TEST_TABLE">
+												<table class="table table-bordered" cellspacing="0"
+													width="100%">
+													<thead>
+														<tr>
+															<th>S.No</th>
+															<th>Test Name</th>
+															<th>Details</th>
+															<th>Total Marks</th>
+															<th>Total Time (in mins)</th>
+															<th>Valid From</th>
+															<th>Valid Till</th>
+															<th>Status</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>1</td>
+															<td>Tier-I Test 2</td>
+															<td>Free Test-2 All solutions are not available in
+																free tests</td>
+															<td>200</td>
+															<td>02:00:00</td>
+															<td></td>
+															<td></td>
+															<td><a href="#">Take Test <span id="GLYPH_ICON"
+																	class="glyphicon glyphicon-play-circle"></span></a></td>
+														</tr>
+														<tr>
+															<td>2</td>
+															<td>Tier-I Test 1</td>
+															<td>Free Test-1 All solutions are not available in
+																free tests</td>
+															<td>200</td>
+															<td>02:00:00</td>
+															<td></td>
+															<td></td>
+															<td><a href="#">Take Test <span id="GLYPH_ICON"
+																	class="glyphicon glyphicon-play-circle"></span></a></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</section>
+									</div>
+
+								</div>
+
+
+
+
+
+							</section>
+						</div>
+
+						<div id="PROFILE_DIV" style="display: none;">
+							<section id="title">
+								<h1 id="TITLE">PROFILE</h1>
+								<div class="row">
+									<div class="col-sm-offset-1 col-sm-10 ">
+										<section class="test schedule">
+
+											<div id="PROFILE_TABLE">
+												<div class="panel panel-info">
+													<div class="panel-heading" id="PANEL_HEADING">
+														<h3 class="panel-title">Name</h3>
+													</div>
+													<div class="panel-body" id="PANEL_BODY">
+														<div class="row">
+															<div class="col-sm-3" align="center">
+																<img id="Picture" alt="User Pic" data-src="#"
+																	class="img-circle img-responsive"> <input
+																	type='file' id="imgInp" accept="image/*"
+																	style="display: none" />
+																<button type="button" id="click_me">Upload</button>
+
+															</div>
+
+
+															<div class=" col-sm-9 ">
+																<table class="table table-bordered" cellspacing="0"
+																	width="100%">
+																	<tbody>
+
+																		<tr>
+																			<td>User ID</td>
+																		</tr>
+																		<tr>
+																			<td>Email</td>
+																		</tr>
+																		<tr>
+																			<td>Mobile No.</td>
+																		</tr>
+																		<tr>
+																			<td>Birth Date</td>
+																		</tr>
+																		<tr>
+																			<td>Registration Date</td>
+																		</tr>
+																		<tr>
+																			<td>Gender</td>
+																		</tr>
+																		<td>Address</td>
+																		</tr>
+
+																		<tr>
+																			<td>Enrollment No</td>
+																		</tr>
+																		<tr>
+																			<td>Course</td>
+																		</tr>
+																		<tr>
+																			<td>Institute</td>
+																		</tr>
+																		<tr>
+																			<td>Branch</td>
+																		</tr>
+																		<tr>
+																			<td>Batch</td>
+																		</tr>
+
+
+
+																	</tbody>
+																</table>
+
+
+															</div>
+														</div>
+													</div>
+
+
+												</div>
+											</div>
+									</div>
+							</section>
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+</body>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+<script>
+
+  
+  $(document).ready(function() {
+
+    $("#TESTS").click(function(){
+      $("#DASHBOARD_DIV").hide();
+      $("#PROFILE_DIV").hide()
+      $("#TEST_DIV").show();
+    });
+
+    $("#DASHBOARD").click(function(){
+      $("#TEST_DIV").hide();
+      $("#PROFILE_DIV").hide()
+      $("#DASHBOARD_DIV").show();
+    });
+
+    $("#PROFILES, #PROFILE_USER").click(function(){
+      $("#TEST_DIV").hide();
+      $("#DASHBOARD_DIV").hide();
+      $("#PROFILE_DIV").show();
+    });
+
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("active");
+    });
+    var currentSrc = $('#Picture').attr('src');
+    if(currentSrc==null || currentSrc==""){        $('#Picture').attr('src','http://i38.photobucket.com/albums/e149/eloginko/profile_male_large_zpseedb2954.jpg');
+  }
+
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $('#Picture').attr('src', e.target.result);
+      }
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  $("#imgInp").change(function(){
+    readURL(this);
+  });
+
+  $("#click_me").click(function () {
+    $("#imgInp").click();
+  });
+
+}); 
+    </script>
+
+</html>
