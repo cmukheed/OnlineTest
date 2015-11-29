@@ -43,6 +43,8 @@ public final class MainController {
 	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
 	public synchronized String homePage(HttpServletRequest servletRequest, Model model) {
 		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
+		model.addAttribute("home", new PropertyReader().getProperties("home.properties"));
+		model.addAttribute("results", new PropertyReader().getProperties("results.properties"));
 		return "home";
 	}
 	

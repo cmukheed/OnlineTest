@@ -52,17 +52,8 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="column">
-									<h4 id="WLCOME">WELCOME TO CLASSMATE ACADEMY</h4>
-									<p id="WELCOME_NOTE">Classmate Academy is an initiative of IITians to prepare the students in all spheres of life. We
-										at classmate academy emphasize on overall improvement of the student.Now a days competitive exams play a major role in
-										getting into the most prestigious jobs. Taking that into consideration we are providing coaching for SSC-CGL, UPSC exams
-										etc. The growing importance of these entrance exams suggests the need for students to undergo extra training to face
-										such exams confidently.Our main aim is to impart quality professional education and meeting the rising expectations of
-										young aspirants in SOUTH INDIA. CLASSMATE ACADEMY has been striving to achieve the objective of pursuit of excellence by
-										students..</p>
-									<h4>INTERACTIVE CLASSES</h4>
-									<p id="INTC_CLASSES">All classes are conducted in a state-of-the-art environment that connects you to instructor and
-										the content in a most effective manner.</p>
+									<div id="main_header" />
+									<div id="main_text" />
 								</div>
 							</div>
 						</div>
@@ -70,8 +61,9 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="column">
-									<h4>Misson Statement</h4>
-									<p>To be a leading provider of excellent classroom and online coaching for SSC CGL.</p>
+									<div id="main_mission_header" />
+									<div id="main_mission_text" />
+									
 								</div>
 							</div>
 						</div>
@@ -115,18 +107,7 @@
 							<div class="col-sm-12">
 								<div class="column">
 									<h4>Results</h4>
-									<p>Reults can be scrolled here</p>
-									<p>Reults can be scrolled here1</p>
-									<p>Reults can be scrolled here2</p>
-									<p>Reults can be scrolled here3</p>
-									<p>Reults can be scrolled here4</p>
-									<p>Reults can be scrolled here5</p>
-									<p>Reults can be scrolled here</p>
-									<p>Reults can be scrolled here1</p>
-									<p>Reults can be scrolled here2</p>
-									<p>Reults can be scrolled here3</p>
-									<p>Reults can be scrolled here4</p>
-									<p>Reults can be scrolled here5</p>
+									<div id="main_results" />
 
 									
 								</div>
@@ -159,11 +140,13 @@
 
 <script th:inline="javascript">
     var footer = [[${footer}]];
+    var homeProperties = [[${home}]];
+    var resultProperties = [[${results}]];
   $(document).ready(function() {
 	  jQuery.get("navigationbar.html", function(data){
 		    jQuery("#topNav").append(data);
 		});
-    	home.init(footer);
+    	home.init(footer, homeProperties, resultProperties);
   }); 
 </script>
 </html>
