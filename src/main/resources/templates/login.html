@@ -1,65 +1,243 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="css/project.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta charset="utf-8" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classmate</title>
+
 <link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/classmate.css" />
+</head>
 <style>
-.error {
-	width: 85%;
-	margin: 20px 0 0 0;
-	padding: 6px 0 6px 0;
-	border: 0;
-	background-color: #000000;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	filter: alpha(opacity = 80);
-	-moz-opacity: 0.8;
-	opacity: 0.8;
+.checkbox {
+	margin-left: 20px;
+}
+
+#USERNAME, #PASSWORD {
+	margin-bottom: 15px;
+}
+
+#LOGIN_COLUMN {
+	padding: 60px;
+}
+
+#LOGIN {
+	background: rgba(122, 130, 136, 0.2) !important;
+}
+
+.panel-heading {
+	background: rgba(122, 130, 136, 0.2) !important;
+}
+
+.panel-title {
+	color: #FFFFFF;
+}
+
+.space {
+	margin-bottom: 10px;
+	align: center;
 }
 </style>
 
-</head>
-<body class="content-body">
-	<div class="container" style="margin-top: 60px">
+
+
+
+<div id="wrap">
+	<div id="main-entire" class="container">
+		<div id="top" class="row">
+			<div class="col-sm-4">logo</div>
+			<div class="col-sm-6">
+				<h1 id="SITE_NAME">CLASSMATE ACADEMY</h1>
+				<h2 id="SUB_TITLE">Powered by IIT</h2>
+			</div>
+		</div>
+
 		<div class="row">
-			<div class="col-sm-6 col-md-4 col-md-offset-4">
-				<div class="panel panel-default login-div">
-					<div class="panel-heading">
-						<strong>Login</strong>
+			<div id="naviWrap" class="col-sm-12">
+				<nav class="navbar navbar-default navbar-inverse" role="navigation">
+					<div class="navbar-header">
+
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+
+						<div class="collapse navbar-collapse navbar-ex1-collapse">
+							<ul class="nav navbar-nav">
+								<li class="hidden"></li>
+								<li class="space"><a href="home.html">Home</a></li>
+								<li class="dropdown space"><a href="aboutUs.html">About
+										Us</a> <!-- <ul class = "dropdown-menu">
+                              <li><a href = "#achievements.html">Achievements</a></li>
+                              <li><a href = "#team.html">Team</a></li>
+                            </ul> --></li>
+								<li class="dropdown space"><a href="#"
+									class="dropdown=toggle" data-toggle="dropdown">Classes<b
+										class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li><a href="#liveclasses.html">Live Classes</a></li>
+										<li><a href="#newbatches.html">New Batches</a></li>
+										<li><a href="#schedule.html">Schedule</a></li>
+									</ul></li>
+								<li class="dropdown space"><a href="#"
+									class="dropdown=toggle" data-toggle="dropdown">Tests<b
+										class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li><a href="test.html">Online Tests</a></li>
+										<li><a href="#testseries.html">Test Series</a></li>
+
+									</ul></li>
+								<li class="dropdown space"><a href="#"
+									class="dropdown=toggle" data-toggle="dropdown">Material<b
+										class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li><a href="#previouspapers.html">Previous Papers</a></li>
+
+									</ul></li>
+								<li class="space"><a href="#contactus.html">Contact Us</a>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div class="panel-body">
-						<form action="#" th:action="@{/login}" th:object="${credentialModel}" method="post">
-							<fieldset>
-								<div class="row">
-									<div class="col-sm-12 col-md-10  col-md-offset-1 ">
-										<div id="INVALID_USER_DIV" th:if="${isError} == true">
-											<span id="INVALID_USER">Invalid User </span>
-										</div>
-										<div class="form-group" id="USERNAME">
-											<div class="input-group">
-												<span class="input-group-addon"> <i class="glyphicon glyphicon-user"></i>
-												</span> <input id="uid" class="form-control" type="text" th:field="*{uid}" />
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="input-group">
-												<span class="input-group-addon"> <i class="glyphicon glyphicon-lock pass"></i>
-												</span> <input id="password" class="form-control" type="password" th:field="*{password}" />
-											</div>
-										</div>
-										<div class="form-group">
-											<input type="submit" class="btn btn-lg  btn-block sign-in-btn" value="Sign in" />
-										</div>
-									</div>
+				</nav>
+			</div>
+		</div>
+
+
+		<div id="main">
+
+			<div class="row">
+
+				<div class="col-sm-9">
+
+
+					<div class="column" id="ONLINETESTDIV">
+						<h2>LOG IN</h2>
+						<div id="LOGIN_COLUMN">
+
+							<div class="panel panel-default" id="LOGIN">
+								<div class="panel-heading">
+									<div class="panel-title text-center">Login to your
+										account</div>
 								</div>
-							</fieldset>
-						</form>
+
+								<div class="panel-body">
+
+									<form name="form" id="form" class="form"
+										enctype="multipart/form-data" method="POST">
+
+										<div class="input-group" id="USERNAME">
+											<span class="input-group-addon"><i
+												class="glyphicon glyphicon-user"></i></span> <input id="USER"
+												type="text" class="form-control" name="user" value=""
+												placeholder="User" required="">
+										</div>
+
+										<div class="input-group" id="PASSWORD">
+											<span class="input-group-addon"><i
+												class="glyphicon glyphicon-lock"></i></span> <input id="PSWD"
+												type="password" class="form-control" name="password"
+												placeholder="Password" required="">
+										</div>
+
+										<div class="form-group">
+											<!-- Button -->
+											<div class="col-sm-12 controls">
+												<label class="checkbox"><span><input
+														type="checkbox" id="CHECKBOX_REMEBER" name="remember"
+														value="1"></span>Remember me </label>
+												<button type="submit" href="#"
+													class="btn btn-primary pull-right">
+													<i class="glyphicon glyphicon-log-in"></i> Log in
+												</button>
+											</div>
+										</div>
+
+										<div class="forgot-password">
+											<h5>Forgot your password</h5>
+											<a href="#">Click here </a>
+										</div>
+
+									</form>
+
+								</div>
+
+
+							</div>
+
+						</div>
+
+						<p>Test Series @ 01-08-2015. All 6 tests
+							(cost-200/-)(different papers apart from ongoing test series)
+							along with the solutions to important questions are uploaded.
+							Please wait for 90 sec while loading. Payment should me made only
+							through Desktop Login ( payment through mobile app is not
+							available), but exams can be given through mobile app.</p>
+
+
+
+					</div>
+					<div class="column" id="TESTSERIES" style="display: none;">
+						<p>TEST SERIES GO HERE</p>
+
+
+					</div>
+
+				</div>
+
+				<div class="col-sm-3">
+					<div class="column">
+						<ul class="nav nav-pills nav-stacked">
+							<li class="active space" id="ONLINE_TESTS"><a href="#">Online
+									Tests</a></li>
+							<li class="active space" id="TEST_SERIES"><a href="#">Test
+									Series</a></li>
+							<li class="active space" id="NEW_USER"><a href="#">New
+									Users </a></li>
+
+
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+
 	</div>
-</body>
+</div>
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="app/js/classmate.js"></script>
+<script>
+                 $('#NEW_USER').click(function(){
+               // window.location.href='registration.html';
+                window.open('registration.html', '_blank');
+                                    })
+                 $("#TEST_SERIES").click(function(){
+                    $("#TESTSERIES").show();
+                    $("#ONLINETESTDIV").hide();
+
+                 });
+                   $("#ONLINE_TESTS").click(function(){
+                    $("#ONLINETESTDIV").show();
+                    $("#TESTSERIES").hide();
+
+                 });
+                 </script>
 </html>

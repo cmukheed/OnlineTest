@@ -39,6 +39,12 @@ public final class MainController {
 
 		return "forward:/home";
 	}
+	
+	@RequestMapping(value = {"/login" }, method = RequestMethod.GET)
+	public String loginpage(HttpServletRequest servletRequest, Model model) throws InterruptedException, IOException {
+		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
+		return "login";
+	}
 
 	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
 	public synchronized String homePage(HttpServletRequest servletRequest, Model model) {
@@ -77,6 +83,12 @@ public final class MainController {
 	public synchronized String contactusPage(HttpServletRequest servletRequest, Model model) {
 		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
 		return "contactus";
+	}
+	
+	@RequestMapping(value = { "/previouspapers" }, method = RequestMethod.GET)
+	public synchronized String previouspapersPage(HttpServletRequest servletRequest, Model model) {
+		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
+		return "previouspapers";
 	}
 
 }
