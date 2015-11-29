@@ -45,6 +45,7 @@ public final class MainController {
 		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
 		model.addAttribute("home", new PropertyReader().getProperties("home.properties"));
 		model.addAttribute("results", new PropertyReader().getProperties("results.properties"));
+		model.addAttribute("tweets", new PropertyReader().getProperties("tweets.properties"));
 		return "home";
 	}
 	

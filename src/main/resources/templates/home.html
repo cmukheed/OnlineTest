@@ -115,8 +115,7 @@
 							<div class="col-sm-12">
 								<div class="column">
 									<h4>Tweets</h4>
-									<p>Tweet can be scrolled here</p>
-
+									<div id="main_tweets" />
 								</div>
 
 							</div>
@@ -142,11 +141,12 @@
     var footer = [[${footer}]];
     var homeProperties = [[${home}]];
     var resultProperties = [[${results}]];
+    var tweetsProperties = [[${tweets}]];
   $(document).ready(function() {
 	  jQuery.get("navigationbar.html", function(data){
 		    jQuery("#topNav").append(data);
 		});
-    	home.init(footer, homeProperties, resultProperties);
+    	home.init(footer, homeProperties, resultProperties, tweetsProperties);
   }); 
 </script>
 </html>
