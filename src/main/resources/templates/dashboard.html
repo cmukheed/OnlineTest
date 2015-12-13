@@ -318,51 +318,93 @@
 
 
 															<div class=" col-sm-9 ">
-																<table class="table table-bordered" cellspacing="0"
-																	width="100%">
-																	<tbody>
+																<div class="row">
 
-																		<tr>
-																			<td>User ID</td>
-																		</tr>
-																		<tr>
-																			<td>Email</td>
-																		</tr>
-																		<tr>
-																			<td>Mobile No.</td>
-																		</tr>
-																		<tr>
-																			<td>Birth Date</td>
-																		</tr>
-																		<tr>
-																			<td>Registration Date</td>
-																		</tr>
-																		<tr>
-																			<td>Gender</td>
-																		</tr>
-																		<td>Address</td>
-																		</tr>
 
-																		<tr>
-																			<td>Enrollment No</td>
-																		</tr>
-																		<tr>
-																			<td>Course</td>
-																		</tr>
-																		<tr>
-																			<td>Institute</td>
-																		</tr>
-																		<tr>
-																			<td>Branch</td>
-																		</tr>
-																		<tr>
-																			<td>Batch</td>
-																		</tr>
+																	<div class="col-sm-12">
+																		<div class="row">
+																			<div class="col-sm-6">
+																				<label>User Id</label> <input type="text" />
+																			</div>
+																			<div class="col-sm-6">
+																				<label>Name</label> <input type="text" />
+																			</div>
+																		</div>
+
+																		<div class="row">
+																			<div class="col-sm-6">
+																				<label>Phone Number</label> <input type="number" />
+																			</div>
+																			<div class="col-sm-6">
+																				<label>Email Address</label> <input type="text" />
+																			</div>
+																		</div>
 
 
 
-																	</tbody>
-																</table>
+																		<div class="row">
+																			<div class="col-sm-6">
+																				<label>Birth Date</label> <input type="number" />
+																			</div>
+																			<div class="col-sm-6">
+																				<label>Gender</label> <input type="text" />
+																			</div>
+																		</div>
+
+
+
+
+
+																		<div class="row">
+																			<div class="col-sm-4">
+																				<label>Country</label> <input type="text" />
+																			</div>
+																			<div class="col-sm-4">
+																				<label>State</label> <input type="text" />
+																			</div>
+
+																			<div class="col-sm-4">
+																				<label>City</label> <input type="text" />
+																			</div>
+																		</div>
+
+
+																		<div class="row">
+																			<div class="col-sm-6">
+																				<label>Registration Date</label> <input
+																					type="number" />
+																			</div>
+																			<div class="col-sm-6">
+																				<label>Enrollment Number</label> <input type="text" />
+																			</div>
+																		</div>
+
+																		<div class="row">
+																			<div class="col-sm-6">
+																				<label>Course</label> <input type="text" />
+																			</div>
+																			<div class="col-sm-6">
+																				<label>Institute</label> <input type="text" />
+																			</div>
+																		</div>
+
+																		<div class="row">
+																			<div class="col-sm-6">
+																				<label>Branch</label> <input type="text" />
+																			</div>
+																			<div class="col-sm-6">
+																				<label>Batch</label> <input type="text" />
+																			</div>
+																		</div>
+
+
+
+
+
+
+																	</div>
+																</div>
+
 
 
 															</div>
@@ -387,62 +429,65 @@
 
 
 </body>
-	<script src="js/jquery-1.11.3.min.js"></script>
-	<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 
 <script>
+	$(document)
+			.ready(
+					function() {
 
-  
-  $(document).ready(function() {
+						$("#TESTS").click(function() {
+							$("#DASHBOARD_DIV").hide();
+							$("#PROFILE_DIV").hide()
+							$("#TEST_DIV").show();
+						});
 
-    $("#TESTS").click(function(){
-      $("#DASHBOARD_DIV").hide();
-      $("#PROFILE_DIV").hide()
-      $("#TEST_DIV").show();
-    });
+						$("#DASHBOARD").click(function() {
+							$("#TEST_DIV").hide();
+							$("#PROFILE_DIV").hide()
+							$("#DASHBOARD_DIV").show();
+						});
 
-    $("#DASHBOARD").click(function(){
-      $("#TEST_DIV").hide();
-      $("#PROFILE_DIV").hide()
-      $("#DASHBOARD_DIV").show();
-    });
+						$("#PROFILES, #PROFILE_USER").click(function() {
+							$("#TEST_DIV").hide();
+							$("#DASHBOARD_DIV").hide();
+							$("#PROFILE_DIV").show();
+						});
 
-    $("#PROFILES, #PROFILE_USER").click(function(){
-      $("#TEST_DIV").hide();
-      $("#DASHBOARD_DIV").hide();
-      $("#PROFILE_DIV").show();
-    });
+						$("#menu-toggle").click(function(e) {
+							e.preventDefault();
+							$("#wrapper").toggleClass("active");
+						});
+						var currentSrc = $('#Picture').attr('src');
+						if (currentSrc == null || currentSrc == "") {
+							$('#Picture')
+									.attr(
+											'src',
+											'http://i38.photobucket.com/albums/e149/eloginko/profile_male_large_zpseedb2954.jpg');
+						}
 
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("active");
-    });
-    var currentSrc = $('#Picture').attr('src');
-    if(currentSrc==null || currentSrc==""){        $('#Picture').attr('src','http://i38.photobucket.com/albums/e149/eloginko/profile_male_large_zpseedb2954.jpg');
-  }
+						function readURL(input) {
+							if (input.files && input.files[0]) {
+								var reader = new FileReader();
 
+								reader.onload = function(e) {
+									$('#Picture').attr('src', e.target.result);
+								}
 
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
+								reader.readAsDataURL(input.files[0]);
+							}
+						}
 
-      reader.onload = function (e) {
-        $('#Picture').attr('src', e.target.result);
-      }
+						$("#imgInp").change(function() {
+							readURL(this);
+						});
 
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
+						$("#click_me").click(function() {
+							$("#imgInp").click();
+						});
 
-  $("#imgInp").change(function(){
-    readURL(this);
-  });
-
-  $("#click_me").click(function () {
-    $("#imgInp").click();
-  });
-
-}); 
-    </script>
+					});
+</script>
 
 </html>

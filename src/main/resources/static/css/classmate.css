@@ -1,10 +1,10 @@
 body {
-	background-color: #a8b6bf;
+	background-color: #22264b;
 }
 
 #main-entire {
 	margin-top: 10px;
-	background: #89bdd3;
+	background: #f6f1ed;
 	border: 1px solid #22264b;
 	padding: 10px;
 }
@@ -19,6 +19,10 @@ body {
 	margin-bottom: 10px;
 	height: 350px;
 }
+.DROPDOWN{
+	color:#000000;
+	font-size: 15px;
+}
 
 .carousel-inner {
 	border-radius: 9px;
@@ -30,28 +34,41 @@ body {
 	font-size: 1em;
 }
 
-#main .column {
+#NAVBAR {
 	background: #22264b;
+}
+
+#NAVBAR_UL li a {
+	color: #f6f1ed;
+	font-size: 20px;
+}
+
+#NAVBAR_UL li a:hover {
+	color: #98dafc;
+}
+
+#main .column {
+	background: #f6f1ed;
 	border: 1px solid #98dafc;
 	padding: 10px;
 	margin-bottom: 10px;
-	color: silver;
+	color: #22264b;
 	border-radius: 7px;
 }
 
-#footer {
-	background: black;
-	color: silver;
-	padding: 10px;
-}
 
 .space {
-	margin-right: 80px;
+	margin-right: 75px;
 	font-size: 1em;
 	font-weight: bold;
 }
 
-<------
--TEST ------>.checkbox {
-	margin-left: 20px;
+.results-scroll li, #TWEETS_DIV li {
+	padding-bottom: 6px;
+}
+
+#FOLLOW_US {
+	padding-top: 15px;
+	padding-right: 5px;
+	font-weight: bold;
 }
