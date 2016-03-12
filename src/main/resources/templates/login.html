@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Classmate</title>
 
 <link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css" />
@@ -54,59 +54,7 @@
 			</div>
 		</div>
 
-		<div class="row">
-			<div id="naviWrap" class="col-sm-12">
-				<nav class="navbar navbar-default navbar-inverse" role="navigation">
-					<div class="navbar-header">
-
-						<button type="button" class="navbar-toggle" data-toggle="collapse"
-							data-target=".navbar-ex1-collapse">
-							<span class="sr-only">Toggle navigation</span> <span
-								class="icon-bar"></span> <span class="icon-bar"></span> <span
-								class="icon-bar"></span>
-						</button>
-
-						<div class="collapse navbar-collapse navbar-ex1-collapse">
-							<ul class="nav navbar-nav">
-								<li class="hidden"></li>
-								<li class="space"><a href="home.html">Home</a></li>
-								<li class="dropdown space"><a href="aboutUs.html">About
-										Us</a> <!-- <ul class = "dropdown-menu">
-                              <li><a href = "#achievements.html">Achievements</a></li>
-                              <li><a href = "#team.html">Team</a></li>
-                            </ul> --></li>
-								<li class="dropdown space"><a href="#"
-									class="dropdown=toggle" data-toggle="dropdown">Classes<b
-										class="caret"></b></a>
-									<ul class="dropdown-menu">
-										<li><a href="#liveclasses.html">Live Classes</a></li>
-										<li><a href="#newbatches.html">New Batches</a></li>
-										<li><a href="#schedule.html">Schedule</a></li>
-									</ul></li>
-								<li class="dropdown space"><a href="#"
-									class="dropdown=toggle" data-toggle="dropdown">Tests<b
-										class="caret"></b></a>
-									<ul class="dropdown-menu">
-										<li><a href="test.html">Online Tests</a></li>
-										<li><a href="#testseries.html">Test Series</a></li>
-
-									</ul></li>
-								<li class="dropdown space"><a href="#"
-									class="dropdown=toggle" data-toggle="dropdown">Material<b
-										class="caret"></b></a>
-									<ul class="dropdown-menu">
-										<li><a href="#previouspapers.html">Previous Papers</a></li>
-
-									</ul></li>
-								<li class="space"><a href="#contactus.html">Contact Us</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-			</div>
-		</div>
-
+		<div id="topNav" class="row"></div>
 
 		<div id="main">
 
@@ -121,37 +69,31 @@
 
 							<div class="panel panel-default" id="LOGIN">
 								<div class="panel-heading">
-									<div class="panel-title text-center">Login to your
-										account</div>
+									<div class="panel-title text-center">Login to your account</div>
 								</div>
 
 								<div class="panel-body">
 
-									<form name="form" id="form" class="form"
-										enctype="multipart/form-data" method="POST">
-
+									<form action="#" th:action="@{/login}" th:object="${credentialModel}" method="post">
+										<div id="INVALID_USER_DIV" th:if="${isError} == true">
+											<span id="INVALID_USER">Invalid User </span>
+										</div>
 										<div class="input-group" id="USERNAME">
-											<span class="input-group-addon"><i
-												class="glyphicon glyphicon-user"></i></span> <input id="USER"
-												type="text" class="form-control" name="user" value=""
-												placeholder="User" required="">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> <input id="uid" type="text"
+												class="form-control" name="uid" value="" placeholder="User" required="" th:field="*{uid}" />
 										</div>
 
 										<div class="input-group" id="PASSWORD">
-											<span class="input-group-addon"><i
-												class="glyphicon glyphicon-lock"></i></span> <input id="PSWD"
-												type="password" class="form-control" name="password"
-												placeholder="Password" required="">
+											<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span> <input id="password" type="password"
+												class="form-control" name="password" placeholder="Password" required="" th:field="*{password}" />
 										</div>
 
 										<div class="form-group">
 											<!-- Button -->
 											<div class="col-sm-12 controls">
-												<label class="checkbox"><span><input
-														type="checkbox" id="CHECKBOX_REMEBER" name="remember"
-														value="1"></span>Remember me </label>
-												<button type="submit" href="#"
-													class="btn btn-primary pull-right">
+												<label class="checkbox"><span><input type="checkbox" id="CHECKBOX_REMEBER" name="remember" value="1" /></span>Remember
+													me </label>
+												<button type="submit" href="#" class="btn btn-primary pull-right">
 													<i class="glyphicon glyphicon-log-in"></i> Log in
 												</button>
 											</div>
@@ -171,12 +113,9 @@
 
 						</div>
 
-						<p>Test Series @ 01-08-2015. All 6 tests
-							(cost-200/-)(different papers apart from ongoing test series)
-							along with the solutions to important questions are uploaded.
-							Please wait for 90 sec while loading. Payment should me made only
-							through Desktop Login ( payment through mobile app is not
-							available), but exams can be given through mobile app.</p>
+						<p>Test Series @ 01-08-2015. All 6 tests (cost-200/-)(different papers apart from ongoing test series) along with the
+							solutions to important questions are uploaded. Please wait for 90 sec while loading. Payment should me made only through
+							Desktop Login ( payment through mobile app is not available), but exams can be given through mobile app.</p>
 
 
 
@@ -192,12 +131,9 @@
 				<div class="col-sm-3">
 					<div class="column">
 						<ul class="nav nav-pills nav-stacked">
-							<li class="active space" id="ONLINE_TESTS"><a href="#">Online
-									Tests</a></li>
-							<li class="active space" id="TEST_SERIES"><a href="#">Test
-									Series</a></li>
-							<li class="active space" id="NEW_USER"><a href="#">New
-									Users </a></li>
+							<li class="active space" id="ONLINE_TESTS"><a href="#">Online Tests</a></li>
+							<li class="active space" id="TEST_SERIES"><a href="#">Test Series</a></li>
+							<li class="active space" id="NEW_USER"><a href="#">New Users </a></li>
 
 
 						</ul>
@@ -205,18 +141,6 @@
 				</div>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
 	</div>
 </div>
 
@@ -224,20 +148,34 @@
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 <script src="app/js/classmate.js"></script>
-<script>
-                 $('#NEW_USER').click(function(){
-               // window.location.href='registration.html';
-                window.open('registration.html', '_blank');
-                                    })
-                 $("#TEST_SERIES").click(function(){
-                    $("#TESTSERIES").show();
-                    $("#ONLINETESTDIV").hide();
+<script src="app/js/login.js"></script>
+<script src="app/js/loadfooter.js"></script>
 
-                 });
-                   $("#ONLINE_TESTS").click(function(){
-                    $("#ONLINETESTDIV").show();
-                    $("#TESTSERIES").hide();
+<script th:inline="javascript">
+var footer = [[${footer}]];
+var homeProperties = [[${home}]];
+var resultProperties = [[${results}]];
+var tweetsProperties = [[${tweets}]];
+$(document).ready(function() {
+	$('#NEW_USER').click(function(){
+        // window.location.href='registration.html';
+         window.open('registration', '_blank');
+                             })
+          $("#TEST_SERIES").click(function(){
+             $("#TESTSERIES").show();
+             $("#ONLINETESTDIV").hide();
 
-                 });
+          });
+            $("#ONLINE_TESTS").click(function(){
+             $("#ONLINETESTDIV").show();
+             $("#TESTSERIES").hide();
+
+          });
+  jQuery.get("navigationbar.html", function(data){
+	    jQuery("#topNav").append(data);
+	});
+	//home.init(footer, homeProperties, resultProperties, tweetsProperties);
+}); 
+                 
                  </script>
 </html>

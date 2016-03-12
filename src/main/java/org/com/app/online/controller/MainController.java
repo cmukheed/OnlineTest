@@ -17,18 +17,17 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes({ "credentialModel" })
 public final class MainController {
 
-	@RequestMapping("/")
+	@RequestMapping("/tests")
 	public String initialScreen(Model model) {
 		CredentialModel credentialModel = new CredentialModel();
 		model.addAttribute("credentialModel", credentialModel);
 		return "login";
 	}
 
-	@RequestMapping(value = {"/login" }, method = RequestMethod.POST)
+	@RequestMapping(value = {"/loginsuccess" }, method = RequestMethod.POST)
 	public String login(@ModelAttribute CredentialModel credentialModel, Model model) throws InterruptedException, IOException {
-		// TODO should apply some user authentication
-		String user = "stellar";
-		String password = "Stellar#2113";
+		String user = "admin";
+		String password = "admin";
 
 		CredentialModel newCredentialModel = new CredentialModel();
 		if (!user.equals(credentialModel.getUid()) || !password.equals(credentialModel.getPassword())) {
@@ -37,11 +36,14 @@ public final class MainController {
 			return "login";
 		}
 
-		return "forward:/home";
+		return "forward:/dashboard";
 	}
 	
-	@RequestMapping(value = {"/login" }, method = RequestMethod.GET)
-	public String loginpage(HttpServletRequest servletRequest, Model model) throws InterruptedException, IOException {
+	
+	@RequestMapping(value = {"/login" }, method = RequestMethod.POST)
+	public String loginpage(@ModelAttribute CredentialModel credentialModel, HttpServletRequest servletRequest, Model model) throws InterruptedException, IOException {
+		CredentialModel newcredentialModel = new CredentialModel();
+		model.addAttribute("credentialModel", newcredentialModel);
 		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
 		return "login";
 	}
@@ -58,6 +60,7 @@ public final class MainController {
 	@RequestMapping(value = { "/aboutus" }, method = RequestMethod.GET)
 	public synchronized String aboutUsPage(HttpServletRequest servletRequest, Model model) {
 		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
+		model.addAttribute("aboutus", new PropertyReader().getProperties("aboutus.properties"));
 		return "aboutus";
 	}
 	
@@ -89,6 +92,18 @@ public final class MainController {
 	public synchronized String previouspapersPage(HttpServletRequest servletRequest, Model model) {
 		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
 		return "previouspapers";
+	}
+	
+	@RequestMapping(value = { "/material" }, method = RequestMethod.GET)
+	public synchronized String materialPage(HttpServletRequest servletRequest, Model model) {
+		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
+		return "material";
+	}
+	
+	@RequestMapping(value = { "/dashboard" }, method = RequestMethod.GET)
+	public synchronized String dashboardPage(HttpServletRequest servletRequest, Model model) {
+		model.addAttribute("footer", new PropertyReader().getProperties("footer.labels"));
+		return "material";
 	}
 
 }

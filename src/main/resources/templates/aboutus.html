@@ -27,22 +27,7 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="column">
-							<div id="ABOUT_US">
-								Classmate Academy is providing the coaching exclusively for all entrance exams conducted by Staff Selection Commission.
-								Courses offered by Classmate Academy: Classroom Coaching:
-								<ul>
-
-									<li>SSC CGL Tier I.</li>
-									<li>SSC CGL Tier II.</li>
-									<li>SSC CGL Interview Guidance.</li>
-									<li>SSC CHSL.</li>
-									<li>SSC CPO.</li>
-
-								</ul>
-								Paper based test series - CGL &nbsp; CHSL. ​Online Services: Online Test Series - CGL Tier I, CGL Tier II, CHSL. Live
-								Online Classes.
-
-
+							<div id="about_us_main">
 							</div>
 						</div>
 
@@ -114,11 +99,12 @@
 
 <script th:inline="javascript">
 	var footer = [[${footer}]];
+	var aboutProperties = [[${aboutus}]];
 	jQuery(document).ready(function() {
 		jQuery.get("navigationbar.html", function(data){
 		    jQuery("#topNav").append(data);
 		});
-		aboutus.init(footer);
+		aboutus.init(footer, aboutProperties);
 	}); 
 </script>
 </html>
